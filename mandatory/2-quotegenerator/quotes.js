@@ -1,3 +1,6 @@
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -17,9 +20,9 @@
 // pickFromArray(coloursArray)  //maybe returns "#F38630"
 //
 // You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
+// function pickFromArray(choices) {
+//   return choices[Math.floor(Math.random() * choices.length)];
+// }
 
 // A list of quotes you can use in your app.
 // Feel free to edit them, and to add your own favourites.
@@ -105,10 +108,6 @@ const quotes = [
   {
     quote: "An unexamined life is not worth living.",
     author: "Socrates",
-  },
-  {
-    quote: "Eighty percent of success is showing up.",
-    author: "Woody Allen",
   },
   {
     quote:
@@ -455,11 +454,6 @@ const quotes = [
   },
   {
     quote:
-      "The question isn’t who is going to let me; it’s who is going to stop me.",
-    author: "Ayn Rand",
-  },
-  {
-    quote:
       "When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.",
     author: "Henry Ford",
   },
@@ -490,3 +484,21 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
+
+function getQuote() {
+  let quoteText = document.getElementById("quote text");
+  let quoteAuthorText = document.getElementById("quote author");
+  let quoteAndAuthor = 
+  quotes[Math.floor(Math.random() * quotes.length)];
+  quoteText.innerText = quoteAndAuthor.quote;
+  quoteAuthorText.innerText = quoteAndAuthor.author;
+};
+
+getQuote();
+
+let nextQuoteButton = document.getElementById("next quote button");
+nextQuoteButton.addEventListener("click", getQuote);
+
+
